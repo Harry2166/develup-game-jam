@@ -47,7 +47,7 @@ public class MouseController : MonoBehaviour {
 
         if (hit2D.collider != null) {
             objSelected = hit2D.transform.gameObject;
-            if (objSelected.tag == "Card") number_of_coins = objSelected.name[4] - '0';
+            if (objSelected.tag == "Card") number_of_coins = objSelected.name[0] - '0';
         }
 
     }
@@ -62,13 +62,9 @@ public class MouseController : MonoBehaviour {
             if (Vector3.Distance(snapPoints[i].transform.position, objSelected.transform.position) < snapSensitivity && i == 0 && objSelected.tag == "Card") {
 
                 objSelected.transform.position = new Vector3(snapPoints[i].transform.position.x, snapPoints[i].transform.position.y, snapPoints[i].transform.position.z - 0.1f);
-
                 Destroy(objSelected);
                 coins += number_of_coins;
                 coinText.text = "Coins: " + coins.ToString();
-                for (int j = 0; j < number_of_coins; j++) {
-                    Instantiate(coinPrefab, new Vector3(0.3f * (Random.Range(0, 5)) + Random.Range(0, 5), 0.2f * (Random.Range(0, 5)) + Random.Range(0, 5), 0), Quaternion.identity);
-                }
 
             } else if (Vector3.Distance(snapPoints[i].transform.position, objSelected.transform.position) < snapSensitivity && i > 0 && objSelected.tag == "Coin") {
 
@@ -95,8 +91,9 @@ public class MouseController : MonoBehaviour {
 
         int cards_count = GameObject.FindGameObjectsWithTag("Card").Length;
         int generator_count = GameObject.FindGameObjectsWithTag("Generator").Length;
+        int follower_count = GameObject.FindGameObjectsWithTag("Follower").Length;
 
-        int sum = cards_count + + generator_count;
+        int sum = cards_count + + generator_count + follower_count;
 
         numberOfCards.text = "Cards: " + sum;
         //Debug.Log("Cards: " + sum);

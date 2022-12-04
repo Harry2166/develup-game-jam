@@ -9,6 +9,7 @@ TagManager:
   - Card
   - Coin
   - Generator
+  - Follower
   layers:
   - Default
   - TransparentFX

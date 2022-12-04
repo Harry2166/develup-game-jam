@@ -34,11 +34,14 @@ public class GenerateNewCards : MonoBehaviour {
         float xOffset = 6f;
 
         for (int i = 0; i < 4; i++) {
-            int random_element = Random.Range(0, cardPrefab.Length);
+            int random_element = Random.Range(1, cardPrefab.Length);
+            Debug.Log("cardPrefab.Length: " + cardPrefab.Length);
+            Debug.Log("random_element: " + random_element);
             if (i % 2 == 0) {
                 switch (i) {
                     case 0:
-                        Instantiate(cardPrefab[random_element], new Vector3(this.transform.position.x, this.transform.position.y + yOffset, 0), Quaternion.identity);
+                        if (GameObject.FindGameObjectsWithTag("Follower").Length == 0) Instantiate(cardPrefab[0], new Vector3(this.transform.position.x, this.transform.position.y + yOffset, 0), Quaternion.identity);
+                        else Instantiate(cardPrefab[random_element], new Vector3(this.transform.position.x, this.transform.position.y + yOffset, 0), Quaternion.identity);
                         break;
                     case 2:
                         Instantiate(cardPrefab[random_element], new Vector3(this.transform.position.x, this.transform.position.y - yOffset, 0), Quaternion.identity);

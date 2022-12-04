@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 1826494732944278854}
   - component: {fileID: 1596457224801529859}
   - component: {fileID: 7418755578903130441}
-  - component: {fileID: 2226680581301582582}
   m_Layer: 0
-  m_Name: Card1
-  m_TagString: Card
+  m_Name: Follower
+  m_TagString: Follower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7356548594905234215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.35, y: 2.29, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0072960854, y: -0.0031695366}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,18 +109,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.908409, y: 5.412692}
+  m_Size: {x: 5.002, y: 7.253332}
   m_EdgeRadius: 0
---- !u!114 &2226680581301582582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7356548594905234215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61613492deb0c25409a97a437ab1a57b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coins_number: 1

@@ -1987,7 +1987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 384, y: -232}
+  m_AnchoredPosition: {x: 402.1, y: -232}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999194408
@@ -2464,5 +2464,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7938861186641557951, guid: c7cb7116eaec87d44b622899ce95c089, type: 3}
+      propertyPath: cardPrefab.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938861186641557951, guid: c7cb7116eaec87d44b622899ce95c089, type: 3}
+      propertyPath: cardPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 7356548594905234215, guid: f6189a91e6209634fbce3fd542a370f1, type: 3}
+    - target: {fileID: 7938861186641557951, guid: c7cb7116eaec87d44b622899ce95c089, type: 3}
+      propertyPath: cardPrefab.Array.data[4]
+      value: 
+      objectReference: {fileID: 7356548594905234215, guid: 5db318942174ada4bb46803237f7e31c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7cb7116eaec87d44b622899ce95c089, type: 3}
