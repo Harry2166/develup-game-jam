@@ -9,7 +9,7 @@ public class MouseController : MonoBehaviour {
     GameObject objSelected = null;
     public GameObject[] snapPoints;
     [SerializeField] private float snapSensitivity = 2.0f;
-    private int coins = 0;
+    public int coins = 0;
     [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private TextMeshProUGUI coinUsedText;
     [SerializeField] private TextMeshProUGUI numberOfCards;
