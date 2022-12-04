@@ -47,7 +47,7 @@ public class MouseController : MonoBehaviour {
 
         if (hit2D.collider != null) {
             objSelected = hit2D.transform.gameObject;
-            if (objSelected.tag == "Card") number_of_coins = objSelected.name[0] - '0';
+            if (objSelected.tag == "Card") number_of_coins = (objSelected.name[0] - '0')*10;
         }
 
     }
@@ -66,7 +66,7 @@ public class MouseController : MonoBehaviour {
                 coins += number_of_coins;
                 coinText.text = "Coins: " + coins.ToString();
 
-            } else if (Vector3.Distance(snapPoints[i].transform.position, objSelected.transform.position) < snapSensitivity && i > 0 && objSelected.tag == "Coin") {
+            }/* else if (Vector3.Distance(snapPoints[i].transform.position, objSelected.transform.position) < snapSensitivity && i > 0 && objSelected.tag == "Coin") {
 
                 objSelected.transform.position = new Vector3(snapPoints[i].transform.position.x, snapPoints[i].transform.position.y, snapPoints[i].transform.position.z - 0.1f);
                 Destroy(objSelected);
@@ -81,7 +81,7 @@ public class MouseController : MonoBehaviour {
                     coinUsedText.text = "Coins spent: " + coinsTracker;
                 }
 
-            }
+            }*/
         }
 
         objSelected = null;
