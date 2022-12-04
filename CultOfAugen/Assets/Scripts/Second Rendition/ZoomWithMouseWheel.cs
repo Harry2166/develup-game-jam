@@ -9,12 +9,23 @@ public class ZoomWithMouseWheel : MonoBehaviour
 
     private Camera ZoomCamera;
     private bool is_ortographic_zoom;
+    [SerializeField] GameObject pauseMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         ZoomCamera = Camera.main;
         is_ortographic_zoom = ZoomCamera.orthographic;
+    }
+
+    public void Pause() {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Resume() {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -28,6 +39,12 @@ public class ZoomWithMouseWheel : MonoBehaviour
             ZoomCamera.orthographicSize += 1;
         } else if (ZoomCamera.orthographicSize > 25) {
             ZoomCamera.orthographicSize -= 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Debug.Log("Escape pressed!");
+            Pause();
+
         }
 
     }
