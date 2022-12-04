@@ -10,6 +10,7 @@ public class ZoomWithMouseWheel : MonoBehaviour
     private Camera ZoomCamera;
     private bool is_ortographic_zoom;
     [SerializeField] GameObject pauseMenu;
+    private bool is_paused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,13 @@ public class ZoomWithMouseWheel : MonoBehaviour
     public void Pause() {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        is_paused = true;
     }
 
     public void Resume() {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        is_paused = false;
     }
 
     // Update is called once per frame
@@ -42,8 +45,13 @@ public class ZoomWithMouseWheel : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            Debug.Log("Escape pressed!");
-            Pause();
+            if(is_paused == false) {
+                Debug.Log("Escape pressed to pause!");
+                Pause();
+            } else {
+                Debug.Log("Escape pressed to exit!");
+                Resume();
+            }
 
         }
 
