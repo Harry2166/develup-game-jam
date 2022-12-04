@@ -10,5 +10,6 @@ public class ExitMarket : MonoBehaviour
         Debug.Log("Market Opened!");
         Market.SetActive(false);
         Time.timeScale = 1f;
+
     }
 }

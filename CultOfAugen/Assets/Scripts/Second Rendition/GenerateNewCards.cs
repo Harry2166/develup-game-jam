@@ -8,6 +8,8 @@ public class GenerateNewCards : MonoBehaviour {
 
     public int tapTimers;
     public float resetTimer;
+    private bool on_mouse = false;
+
 
     IEnumerator ResetTapTimes() {
         yield return new WaitForSeconds(resetTimer);
@@ -21,11 +23,23 @@ public class GenerateNewCards : MonoBehaviour {
             tapTimers++;
         }
 
-        if(tapTimers >= 2) {
+        if(Time.timeScale == 0f) {
+            tapTimers = 0;
+        }
+
+        if(tapTimers >= 2 && on_mouse) {
             tapTimers = 0;
             Debug.Log("double tap");
             OnMouseDown_test();
         }
+    }
+
+    void OnMouseOver() {
+        on_mouse = true;
+    }
+
+    void OnMouseExit() {
+        on_mouse = false;
     }
 
     private void OnMouseDown_test() {
