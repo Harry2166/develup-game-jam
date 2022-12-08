@@ -49,7 +49,6 @@ public class GenerateNewCards : MonoBehaviour {
 
         for (int i = 0; i < 4; i++) {
             int random_element = Random.Range(1, cardPrefab.Length);
-            Debug.Log("cardPrefab.Length: " + cardPrefab.Length);
             Debug.Log("random_element: " + random_element);
             if (i % 2 == 0) {
                 switch (i) {
