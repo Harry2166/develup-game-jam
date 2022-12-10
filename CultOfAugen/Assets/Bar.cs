@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DentedPixel;
+using TMPro;
 
 public class Bar : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Bar : MonoBehaviour
     private bool is_it_night = true;
     private bool start_time = false;
     private float time_time = 0f;
+    [SerializeField] private TextMeshProUGUI timeText;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,12 @@ public class Bar : MonoBehaviour
 
     void Update()
     {
+
+        if (is_it_night) {
+            timeText.text = "Night Time";
+        } else {
+            timeText.text = "Day Time";
+        }
 
         time_time += Time.deltaTime;
 
